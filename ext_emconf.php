@@ -12,9 +12,9 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'ke DomPDF',
-	'description' => 'typo3output => pdf',
+	'description' => 'DomPDF library and a small pi1 to show how to use DomPDF to render the current typo3-page to pdf',
 	'category' => 'misc',
-	'author' => 'Nadine Schwingler',
+	'author' => 'Nadine Schwingler (kennziffer.com)',
 	'author_email' => 'schwingler@kennziffer.com',
 	'shy' => '',
 	'dependencies' => '',
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
 	'author_company' => '',
-	'version' => '0.0.0',
+	'version' => '0.0.1',
 	'constraints' => array(
 		'depends' => array(
 		),
