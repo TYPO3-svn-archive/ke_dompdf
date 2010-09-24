@@ -157,7 +157,11 @@ class Text_Frame_Decorator extends Frame_Decorator {
     if ( $offset == 0 )
       return;
 
+    //$split = $this->_frame->get_node()->splitText($offset);
+    $text = $this->_frame->get_node()->nodeValue;
     $split = $this->_frame->get_node()->splitText($offset);
+    $this->_frame->get_node()->nodeValue = mb_substr($text,0,$offset);
+    $split->nodeValue = mb_substr($text,$offset);
     $deco = $this->copy($split);
 
     $p = $this->get_parent();
