@@ -51,12 +51,9 @@ class tx_kedompdf_pi1 extends tslib_pibase {
 		$this->pi_USER_INT_obj=1;
 		
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ke_dompdf']);
-		t3lib_div::devLog('conf', $this->prefixId, 0, $conf);
-		//t3lib_div::devLog('extconf', $this->prefixId, 0, $this->extConf);
 		
 		$url = 'http://'.t3lib_div::getIndpEnv('HTTP_HOST').t3lib_div::getIndpEnv('REQUEST_URI');
 		$url .= '&type=101';
-		t3lib_div::devLog('url '.$url, $this->prefixId, 0, array($html));
 		
 		if ($conf['activate_pdf'] == 1){		
 			$mode = $conf['mode'];
@@ -69,7 +66,6 @@ class tx_kedompdf_pi1 extends tslib_pibase {
 					spl_autoload_register('DOMPDF_autoload');
 					//$html = file_get_contents($url);
 					$html = $GLOBALS['TSFE']->content;
-					t3lib_div::devLog('url/html '.$url, $this->prefixId, 0, array($html));
 						
 					$dompdf = new DOMPDF();
 					$dompdf->load_html($html);
@@ -83,10 +79,6 @@ class tx_kedompdf_pi1 extends tslib_pibase {
 				break;
 			}
 		}
-		
-		/*return 'Hello World!<HR>
-			Here is the TypoScript passed to the method:'.
-					t3lib_div::view_array($conf);*/
 	}
 }
 
